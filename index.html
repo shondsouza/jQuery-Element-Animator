@@ -1,0 +1,89 @@
+ 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>jQuery Task</title> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            padding: 0; 
+            background-color: #f9f9f9; 
+        } 
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background: #fff; 
+            border: 1px solid #ddd; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        } 
+        p, ul { 
+            margin: 10px 0; 
+        } 
+        button { 
+            margin: 10px 5px; 
+            padding: 8px 15px; 
+            background-color: #007bff; 
+            color: #fff; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 4px; 
+        } 
+        button:hover { 
+            background-color: #0056b3; 
+        }   
+        .box { 
+            width: 100px; 
+            height: 100px; 
+            margin: 20px auto; 
+            background-color: #f4b400; 
+            position: relative; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <div class="container"> 
+        <h1>jQuery Demo</h1> 
+        <p>This is an existing paragraph.</p> 
+        <ul> 
+            <li>First item</li> 
+            <li>Second item</li> 
+        </ul> 
+        <button id="append-btn">Append Content</button> 
+        <button id="animate-btn">Animate Box</button> 
+        <button id="change-color-btn">Change Box Color</button> 
+        <div class="box"></div> 
+    </div> 
+    <script> 
+ 
+$(document).ready(function () { 
+    // a. Append content to paragraph and list 
+    $('#append-btn').click(function () { 
+        $('p').append(' This is appended content.'); 
+        $('ul').append('<li>New appended item</li>'); 
+    }); 
+ 
+    // b. Animate the box element 
+    $('#animate-btn').click(function () { 
+        $('.box').animate({ 
+            width: '200px', 
+            height: '200px', 
+            left: '50px' 
+        }, 1000, function () { 
+            // Animation complete 
+            alert('Animation complete!'); 
+        }); 
+    }); 
+ 
+    // c. Change color of the animated box 
+    $('#change-color-btn').click(function () { 
+$('.box').css('background-color', '#28a745'); 
+}); 
+}); 
+</script> 
+</body> 
+</html> 
